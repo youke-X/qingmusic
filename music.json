@@ -1,0 +1,174 @@
+{
+  "name": "音乐源聚合配置",
+  "version": "1.0.0",
+  "description": "支持多个音乐平台的搜索和播放",
+  "lines": [
+    {
+      "id": "kw",
+      "name": "酷我音乐",
+      "enabled": true,
+      "searchApi": "kwSearchMusic",
+      "detailApi": "kwMusicDetail",
+      "lyricApi": "kwMusicLyric",
+      "levels": ["standard", "exhigh", "lossless"],
+      "levelMap": {
+        "standard": 128,
+        "exhigh": 320,
+        "lossless": 999
+      },
+      "platform": "kuwo",
+      "timeout": 5000,
+      "retry": 3
+    },
+    {
+      "id": "wy",
+      "name": "网易云音乐",
+      "enabled": true,
+      "searchApi": "wySearchMusic",
+      "detailApi": "wyMusicDetail",
+      "lyricApi": "wyMusicLyric",
+      "levels": [
+        "standard",
+        "exhigh",
+        "lossless",
+        "hires",
+        "sky",
+        "jyeffect",
+        "jymaster"
+      ],
+      "levelMap": {
+        "standard": 128000,
+        "exhigh": 320000,
+        "lossless": 999000,
+        "hires": 999000,
+        "sky": 999000,
+        "jyeffect": 320000,
+        "jymaster": 999000
+      },
+      "platform": "netease",
+      "timeout": 5000,
+      "retry": 3,
+      "requireLogin": true,
+      "loginType": "cookie"
+    },
+    {
+      "id": "kg",
+      "name": "酷狗音乐",
+      "enabled": true,
+      "searchApi": "kgSearchMusic",
+      "detailApi": "kgMusicDetail",
+      "lyricApi": "kgMusicLyric",
+      "levels": [
+        "standard",
+        "exhigh",
+        "lossless",
+        "hires",
+        "atmos",
+        "clear"
+      ],
+      "levelMap": {
+        "standard": "128",
+        "exhigh": "320",
+        "lossless": "flac",
+        "hires": "hires",
+        "atmos": "atmos",
+        "clear": "clear"
+      },
+      "platform": "kugou",
+      "timeout": 5000,
+      "retry": 3
+    },
+    {
+      "id": "tx",
+      "name": "QQ音乐",
+      "enabled": true,
+      "searchApi": "txSearchMusic",
+      "detailApi": "txMusicDetail",
+      "lyricApi": "txMusicLyric",
+      "levels": ["standard", "exhigh", "lossless"],
+      "levelMap": {
+        "standard": "M500",
+        "exhigh": "M800",
+        "lossless": "FLAC"
+      },
+      "platform": "qq",
+      "timeout": 5000,
+      "retry": 3,
+      "requireLogin": true
+    },
+    {
+      "id": "mg",
+      "name": "咪咕音乐",
+      "enabled": false,
+      "searchApi": "mgSearchMusic",
+      "detailApi": "mgMusicDetail",
+      "lyricApi": "mgMusicLyric",
+      "levels": ["standard", "exhigh"],
+      "levelMap": {
+        "standard": "128",
+        "exhigh": "320"
+      },
+      "platform": "migu",
+      "timeout": 5000,
+      "retry": 3
+    },
+    {
+      "id": "xm",
+      "name": "虾米音乐",
+      "enabled": false,
+      "searchApi": "xmSearchMusic",
+      "detailApi": "xmMusicDetail",
+      "lyricApi": "xmMusicLyric",
+      "levels": ["standard", "exhigh", "lossless"],
+      "levelMap": {
+        "standard": "128",
+        "exhigh": "320",
+        "lossless": "flac"
+      },
+      "platform": "xiami",
+      "timeout": 5000,
+      "retry": 3
+    },
+    {
+      "id": "baidu",
+      "name": "百度音乐",
+      "enabled": false,
+      "searchApi": "bdSearchMusic",
+      "detailApi": "bdMusicDetail",
+      "lyricApi": "bdMusicLyric",
+      "levels": ["standard", "exhigh"],
+      "levelMap": {
+        "standard": "128",
+        "exhigh": "320"
+      },
+      "platform": "baidu",
+      "timeout": 5000,
+      "retry": 3
+    }
+  ],
+  "global": {
+    "cacheEnabled": true,
+    "cacheTime": 3600,
+    "proxyEnabled": false,
+    "proxyUrl": "",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "timeout": 10000,
+    "maxRetries": 3,
+    "concurrentRequests": 5
+  },
+  "qualityPriority": [
+    "jymaster",
+    "hires",
+    "atmos",
+    "lossless",
+    "exhigh",
+    "standard"
+  ],
+  "ui": {
+    "theme": "dark",
+    "showLyrics": true,
+    "defaultQuality": "lossless",
+    "autoPlay": false,
+    "volume": 80
+  }
+}
